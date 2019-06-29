@@ -1,0 +1,2 @@
+# ProgressiveSampleOfPrismWPF
+Prismのみを使ったWPFアプリに利用するサンプル
