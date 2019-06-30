@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="ShowContentSelectedInList.Views.ListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <ListBox x:Name="List" ItemsSource="{Binding PersonList.People}">
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="SelectionChanged">
+                <i:InvokeCommandAction Command="{Binding ChangeContent}" CommandParameter="{Binding SelectedItem,ElementName=List}"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding Name}"/>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+</UserControl>
